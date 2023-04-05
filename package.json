@@ -1,0 +1,27 @@
+{
+  "name": "used_goods_trade_platform",
+  "version": "1.0.0",
+  "description": "중고 거래 플랫폼 프로젝트",
+  "main": "app.js",
+  "scripts": {
+    "start": "babel-node app.js",
+    "dev": "nodemon --exec babel-node app.js"
+  },
+  "author": "mumu, twalla",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.4",
+    "@babel/node": "^7.20.7",
+    "@babel/preset-env": "^7.21.4"
+  },
+  "babel": {
+    "presets": [
+      "@babel/env"
+    ]
+  }
+}
