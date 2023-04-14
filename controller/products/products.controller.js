@@ -1,5 +1,5 @@
 // 라우터
-import { getAllProducts }  from "./products.services";
+import { getAllProducts }  from "./products.services.js";
 import { Router } from "express";
 const router = Router();
 

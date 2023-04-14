@@ -1,6 +1,7 @@
 {
   "name": "used_goods_trade_platform",
   "version": "1.0.0",
+  "type": "module",
   "description": "중고 거래 플랫폼 프로젝트",
   "main": "app.js",
   "scripts": {
@@ -12,8 +13,8 @@
   "dependencies": {
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "mysql": "^2.18.1",
-    "node-fetch": "^3.3.1",
+    "jsonwebtoken": "^9.0.0",
+    "mysql2": "^3.2.0",
     "passport": "^0.6.0",
     "passport-kakao": "^1.0.1"
   },

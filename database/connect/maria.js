@@ -1,12 +1,15 @@
-/*
-const maria = require('mysql');
+import maria from "mysql2";
+import dotenv from "dotenv";
+dotenv.config();
 
-const conn = maria.createConnection({
-    host: 'localhost',
-    port: process.env.SERVER_PORT,
-    user: 'user',
-    password: 'pwd',
-    database: 'db name'
+
+const connection = maria.createConnection({
+    host : 'localhost',
+    port : process.env.DB_PORT,
+    user : 'root',
+    password : process.env.DB_PASSWORD,
+    database : 'used_goods_trade_platform'
 });
 
-module.exports = conn;*/
+
+export default connection;

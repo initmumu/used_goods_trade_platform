@@ -1,7 +1,7 @@
 import { Router } from "express";
 const router = Router();
 
-import { viewMainpage } from "./main.services";
+import { viewMainpage } from "./main.services.js";
 
 router.get('/', viewMainpage);
 
