@@ -1,9 +1,11 @@
-import products from "./controller/products/products.controller.js";
+import products from "./controller/./product/product.controller.js";
 import main from "./controller/main.controller.js";
 import user from "./controller/user/user.controller.js";
+import product from "./controller/product/product.controller.js";
 import test from "./controller/apitest/test.controller.js"
 import express from "express";
 import maria from "./database/connect/maria.js";
+import cors from "cors";
 
 export class AppBoot {
     constructor(PORT){
@@ -17,6 +19,9 @@ export class AppBoot {
     }
 
     setMiddleware() {
+
+        this.app.use(cors({ credentials: true }));
+
         this.app.use((req, res, next) => {
             console.log(`[${req.ip}] 클라이언트 접속`);
             return next();
@@ -28,7 +33,7 @@ export class AppBoot {
     setRouter(){
         this.app.use('/', main);
         this.app.use('/test', test)
-        this.app.use('/products', products);
+        this.app.use('/product', product);
         this.app.use('/user', user);
     }
 

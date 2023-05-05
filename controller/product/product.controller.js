@@ -1,8 +1,8 @@
 // 라우터
-import { getAllProducts }  from "./products.services.js";
+import { list }  from "./product.services.js";
 import { Router } from "express";
 const router = Router();
 
-router.get('/', getAllProducts);
+router.get('/list', list);
 
 export default router;
