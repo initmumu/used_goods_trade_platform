@@ -1,4 +1,4 @@
-import { AppBoot } from "./app.boot";
+import { AppBoot } from "./app.boot.js";
 import dotenv from "dotenv";
 dotenv.config();
 

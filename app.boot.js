@@ -1,11 +1,19 @@
-import products from "./controller/products/products.controller";
-import main from "./controller/main.controller";
+import products from "./controller/products/products.controller.js";
+import main from "./controller/main.controller.js";
+import user from "./controller/user/user.controller.js";
+import test from "./controller/apitest/test.controller.js"
 import express from "express";
+import maria from "./database/connect/maria.js";
 
 export class AppBoot {
     constructor(PORT){
         this.PORT = PORT;
         this.app = express();
+
+    }
+
+    connectDB() {
+        maria.connect();
     }
 
     setMiddleware() {
@@ -13,11 +21,15 @@ export class AppBoot {
             console.log(`[${req.ip}] 클라이언트 접속`);
             return next();
         });
+
+        this.app.use(express.json()); // json 파서!
     }
 
     setRouter(){
         this.app.use('/', main);
+        this.app.use('/test', test)
         this.app.use('/products', products);
+        this.app.use('/user', user);
     }
 
     setErrorHandler(){
@@ -30,6 +42,7 @@ export class AppBoot {
     }
 
     boot() {
+        this.connectDB();
         this.setMiddleware();
         this.setRouter();
         this.setErrorHandler();
